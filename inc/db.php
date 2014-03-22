@@ -30,6 +30,6 @@ function createConnection(){
         echo "Error connecting to database " . $e->getMessage() . "<br />";
     }
 }
-
+// Now we can assume $db is in the scope!
 $db = createConnection();
 ?>

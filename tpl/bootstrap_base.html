@@ -5,6 +5,10 @@
 <body>
 	<!-- This is TPL Code -->
 	{if="isset($body)"}
+		<!-- Basically we're choosing to insert a template into a template -->
+		<!-- We use this file (bootstra_base.html) to do the stuff we're going to need on every page (styling, javascript)
+		but occasionally you might need a whole different template for the base, but that's fine, you could also essentially 
+		do everything in here, rather than linking to a template in a template, but it's a bit nicer -->
 		{include="$body"}
 	{/if}
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
