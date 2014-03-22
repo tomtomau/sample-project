@@ -1,7 +1,10 @@
 <div class="container">
 	<div class="top-div"> <!-- This is a generic class, not anything fancy in bootstrap -->
 		<h1>Hello world!</h1>
-		<p class="lead">Aren't words cool? I love typography.</p>
+		<p class="lead">Aren't words cool? I love typography. I also love 
+			{loop="vegetables"}
+			{$value.Name}{* Do we need a comma? *}{if="$counter+1!=count($vegetables)"},{/if}{/loop}.
+		</p>
 	</div>
 	<div class="another-div">
 	<div class="row">
