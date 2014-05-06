@@ -1,14 +1,19 @@
 <?php
-/**
-*   Here is where you set the parameters for the database connection.
-*   The default options should be okay for most distributions of XAMPP
-*/
-$db_params = array(
-	"user"=>"root",
-	"pass"=>"",
-	"name"=>"sample_project",
-	"host"=>"localhost"
-	);
+if(DEV){
+    $db_params = array(
+        "user"=>"root",
+        "pass"=>"",
+        "name"=>"instadata",
+        "host"=>"localhost"
+        );
+}else{
+    $db_params = array(
+    "user"=>"statapar",
+    "pass"=>"5qu4754nd0475",
+    "name"=>"statapar_instadata",
+    "host"=>"127.0.0.1"
+    );
+}
 
 function createConnection(){
     // Connect to database
@@ -30,6 +35,6 @@ function createConnection(){
         echo "Error connecting to database " . $e->getMessage() . "<br />";
     }
 }
-// Now we can assume $db is in the scope!
+
 $db = createConnection();
 ?>

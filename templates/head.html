@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="google-site-verification" content="{$google_site_verification}" />
+    <meta property="og:site_name" content="Fylix:: Instagram Geographical Data Analytics"/>
+    {if="isset($ogtitle)"}
+    <meta property="og:title" content="{$ogtitle}"/>
+    <meta name="description" content="{$ogtitle}" />
+    {/if}
+    <title>{$sitename}</title>
+	  <link rel="stylesheet" href="{$rootdir}css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+{if="$production"}
+<!-- GA Script -->
+
+{/if}
+<div class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{$rootdir}">{$sitename}</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        {if="isset($pages)"}
+        {loop="pages"}
+        <li {if="isset($page)&&$value.link==$page"}class="active"{/if}>
+          <a href="{$rootdir}{$value.link}">{$value.title}</a>
+        </li>
+        {/loop}
+        {else}
+        <li>
+          <a href="{$rootdir}">Home</a>
+        </li>
+        {/if}
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>
